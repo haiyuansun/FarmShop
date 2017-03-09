@@ -7,25 +7,84 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3040AE261E6D9627007E2447 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3040AE221E6D9627007E2447 /* Home.storyboard */; };
+		3040AE271E6D9627007E2447 /* HYPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3040AE251E6D9627007E2447 /* HYPageView.m */; };
+		3040AE2C1E6D966F007E2447 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3040AE2B1E6D966F007E2447 /* HomeViewController.m */; };
+		30659F401E6F9F97005C6BD1 /* HYListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30659F3E1E6F9F97005C6BD1 /* HYListCell.m */; };
+		30659F411E6F9F97005C6BD1 /* HYListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 30659F3F1E6F9F97005C6BD1 /* HYListCell.xib */; };
+		30659F441E6FADB6005C6BD1 /* HYListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 30659F431E6FADB6005C6BD1 /* HYListModel.m */; };
+		30659F461E6FC2DF005C6BD1 /* listTable.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30659F451E6FC2DF005C6BD1 /* listTable.plist */; };
+		30659F4B1E6FE11A005C6BD1 /* HYDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30659F491E6FE11A005C6BD1 /* HYDetailViewController.m */; };
+		30659F501E6FE288005C6BD1 /* HYDetailStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 30659F4F1E6FE288005C6BD1 /* HYDetailStoryboard.storyboard */; };
 		3080C7F31E68EDF400F13DDE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3080C7F21E68EDF400F13DDE /* main.m */; };
 		3080C7F61E68EDF400F13DDE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3080C7F51E68EDF400F13DDE /* AppDelegate.m */; };
 		3080C7F91E68EDF400F13DDE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3080C7F81E68EDF400F13DDE /* ViewController.m */; };
 		3080C7FC1E68EDF400F13DDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3080C7FA1E68EDF400F13DDE /* Main.storyboard */; };
 		3080C7FE1E68EDF400F13DDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3080C7FD1E68EDF400F13DDE /* Assets.xcassets */; };
 		3080C8011E68EDF400F13DDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3080C7FF1E68EDF400F13DDE /* LaunchScreen.storyboard */; };
+		3080C8131E68F2FC00F13DDE /* QRCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3080C8121E68F2FC00F13DDE /* QRCode.storyboard */; };
+		3080C8211E68F90400F13DDE /* QRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3080C8201E68F90400F13DDE /* QRCodeViewController.m */; };
+		3080C8291E692A2D00F13DDE /* UIImage+Fit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3080C8261E692A2D00F13DDE /* UIImage+Fit.m */; };
+		3080C82A1E692A2D00F13DDE /* UIView+AdjustFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 3080C8281E692A2D00F13DDE /* UIView+AdjustFrame.m */; };
+		30E967951E6E630D0012C59F /* HYSearchTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E967941E6E630D0012C59F /* HYSearchTextField.m */; };
+		30E967BD1E6EC18B0012C59F /* Homelist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30E967BC1E6EC18B0012C59F /* Homelist.plist */; };
+		30E967C21E6ED3280012C59F /* HYHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E967C11E6ED3280012C59F /* HYHomeHeaderView.m */; };
+		30E967C51E6ED9270012C59F /* HYTypeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E967C41E6ED9270012C59F /* HYTypeModel.m */; };
+		30E967C81E6ED9450012C59F /* HYDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E967C71E6ED9450012C59F /* HYDetailModel.m */; };
+		30E967CB1E6EDE730012C59F /* HYDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E967CA1E6EDE730012C59F /* HYDetailCell.m */; };
+		30E967CF1E6EEF3B0012C59F /* HYListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E967CD1E6EEF3B0012C59F /* HYListViewController.m */; };
+		50E7758BC4AAFE35327BC585 /* Pods________.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7FA6205300D7C33FA79C9B /* Pods________.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3040AE221E6D9627007E2447 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		3040AE241E6D9627007E2447 /* HYPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYPageView.h; sourceTree = "<group>"; };
+		3040AE251E6D9627007E2447 /* HYPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYPageView.m; sourceTree = "<group>"; };
+		3040AE2A1E6D966F007E2447 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		3040AE2B1E6D966F007E2447 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		30659F3D1E6F9F97005C6BD1 /* HYListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYListCell.h; sourceTree = "<group>"; };
+		30659F3E1E6F9F97005C6BD1 /* HYListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYListCell.m; sourceTree = "<group>"; };
+		30659F3F1E6F9F97005C6BD1 /* HYListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HYListCell.xib; sourceTree = "<group>"; };
+		30659F421E6FADB6005C6BD1 /* HYListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYListModel.h; sourceTree = "<group>"; };
+		30659F431E6FADB6005C6BD1 /* HYListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYListModel.m; sourceTree = "<group>"; };
+		30659F451E6FC2DF005C6BD1 /* listTable.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = listTable.plist; sourceTree = "<group>"; };
+		30659F481E6FE11A005C6BD1 /* HYDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYDetailViewController.h; sourceTree = "<group>"; };
+		30659F491E6FE11A005C6BD1 /* HYDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYDetailViewController.m; sourceTree = "<group>"; };
+		30659F4F1E6FE288005C6BD1 /* HYDetailStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HYDetailStoryboard.storyboard; sourceTree = "<group>"; };
 		3080C7EE1E68EDF400F13DDE /* 实验室农委项目.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "实验室农委项目.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3080C7F21E68EDF400F13DDE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		3080C7F41E68EDF400F13DDE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		3080C7F51E68EDF400F13DDE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		3080C7F71E68EDF400F13DDE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		3080C7F81E68EDF400F13DDE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		3080C7F41E68EDF400F13DDE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../../AppDelegate.h; sourceTree = "<group>"; };
+		3080C7F51E68EDF400F13DDE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../../AppDelegate.m; sourceTree = "<group>"; };
+		3080C7F71E68EDF400F13DDE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ../../ViewController.h; sourceTree = "<group>"; };
+		3080C7F81E68EDF400F13DDE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ../../ViewController.m; sourceTree = "<group>"; };
 		3080C7FB1E68EDF400F13DDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3080C7FD1E68EDF400F13DDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3080C8001E68EDF400F13DDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3080C8021E68EDF400F13DDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3080C8121E68F2FC00F13DDE /* QRCode.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QRCode.storyboard; sourceTree = "<group>"; };
+		3080C81F1E68F90400F13DDE /* QRCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeViewController.h; sourceTree = "<group>"; };
+		3080C8201E68F90400F13DDE /* QRCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeViewController.m; sourceTree = "<group>"; };
+		3080C8231E69099D00F13DDE /* MyPch.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPch.pch; sourceTree = "<group>"; };
+		3080C8251E692A2D00F13DDE /* UIImage+Fit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Fit.h"; sourceTree = "<group>"; };
+		3080C8261E692A2D00F13DDE /* UIImage+Fit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Fit.m"; sourceTree = "<group>"; };
+		3080C8271E692A2D00F13DDE /* UIView+AdjustFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AdjustFrame.h"; sourceTree = "<group>"; };
+		3080C8281E692A2D00F13DDE /* UIView+AdjustFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AdjustFrame.m"; sourceTree = "<group>"; };
+		30E967931E6E630D0012C59F /* HYSearchTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYSearchTextField.h; sourceTree = "<group>"; };
+		30E967941E6E630D0012C59F /* HYSearchTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYSearchTextField.m; sourceTree = "<group>"; };
+		30E967BC1E6EC18B0012C59F /* Homelist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Homelist.plist; sourceTree = "<group>"; };
+		30E967C01E6ED3280012C59F /* HYHomeHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYHomeHeaderView.h; sourceTree = "<group>"; };
+		30E967C11E6ED3280012C59F /* HYHomeHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYHomeHeaderView.m; sourceTree = "<group>"; };
+		30E967C31E6ED9270012C59F /* HYTypeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYTypeModel.h; sourceTree = "<group>"; };
+		30E967C41E6ED9270012C59F /* HYTypeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYTypeModel.m; sourceTree = "<group>"; };
+		30E967C61E6ED9450012C59F /* HYDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYDetailModel.h; sourceTree = "<group>"; };
+		30E967C71E6ED9450012C59F /* HYDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYDetailModel.m; sourceTree = "<group>"; };
+		30E967C91E6EDE730012C59F /* HYDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYDetailCell.h; sourceTree = "<group>"; };
+		30E967CA1E6EDE730012C59F /* HYDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYDetailCell.m; sourceTree = "<group>"; };
+		30E967CC1E6EEF3B0012C59F /* HYListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYListViewController.h; sourceTree = "<group>"; };
+		30E967CD1E6EEF3B0012C59F /* HYListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYListViewController.m; sourceTree = "<group>"; };
+		3A651F75B55B49973EBB93B2 /* Pods-实验室农委项目.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-实验室农委项目.debug.xcconfig"; path = "Pods/Target Support Files/Pods-实验室农委项目/Pods-实验室农委项目.debug.xcconfig"; sourceTree = "<group>"; };
+		5F7FA6205300D7C33FA79C9B /* Pods________.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods________.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B37A4232A9E3F3D13FAF6C5C /* Pods-实验室农委项目.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-实验室农委项目.release.xcconfig"; path = "Pods/Target Support Files/Pods-实验室农委项目/Pods-实验室农委项目.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +92,90 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50E7758BC4AAFE35327BC585 /* Pods________.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A617CF73CAD69B9E1C07423 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5F7FA6205300D7C33FA79C9B /* Pods________.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3040AE211E6D9627007E2447 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				30E967921E6E62ED0012C59F /* HYSearchBar */,
+				3040AE221E6D9627007E2447 /* Home.storyboard */,
+				3040AE231E6D9627007E2447 /* HYPageView */,
+				30E967C01E6ED3280012C59F /* HYHomeHeaderView.h */,
+				30E967C11E6ED3280012C59F /* HYHomeHeaderView.m */,
+				30E967C91E6EDE730012C59F /* HYDetailCell.h */,
+				30E967CA1E6EDE730012C59F /* HYDetailCell.m */,
+				30659F3D1E6F9F97005C6BD1 /* HYListCell.h */,
+				30659F3E1E6F9F97005C6BD1 /* HYListCell.m */,
+				30659F3F1E6F9F97005C6BD1 /* HYListCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3040AE231E6D9627007E2447 /* HYPageView */ = {
+			isa = PBXGroup;
+			children = (
+				3040AE241E6D9627007E2447 /* HYPageView.h */,
+				3040AE251E6D9627007E2447 /* HYPageView.m */,
+			);
+			path = HYPageView;
+			sourceTree = "<group>";
+		};
+		3040AE281E6D962F007E2447 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3040AE2A1E6D966F007E2447 /* HomeViewController.h */,
+				3040AE2B1E6D966F007E2447 /* HomeViewController.m */,
+				30E967CC1E6EEF3B0012C59F /* HYListViewController.h */,
+				30E967CD1E6EEF3B0012C59F /* HYListViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3040AE291E6D9636007E2447 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				30E967BC1E6EC18B0012C59F /* Homelist.plist */,
+				30659F451E6FC2DF005C6BD1 /* listTable.plist */,
+				30E967C31E6ED9270012C59F /* HYTypeModel.h */,
+				30E967C41E6ED9270012C59F /* HYTypeModel.m */,
+				30E967C61E6ED9450012C59F /* HYDetailModel.h */,
+				30E967C71E6ED9450012C59F /* HYDetailModel.m */,
+				30659F421E6FADB6005C6BD1 /* HYListModel.h */,
+				30659F431E6FADB6005C6BD1 /* HYListModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		30659F471E6FDBC5005C6BD1 /* Product Detail */ = {
+			isa = PBXGroup;
+			children = (
+				30659F481E6FE11A005C6BD1 /* HYDetailViewController.h */,
+				30659F491E6FE11A005C6BD1 /* HYDetailViewController.m */,
+				30659F4F1E6FE288005C6BD1 /* HYDetailStoryboard.storyboard */,
+			);
+			path = "Product Detail";
+			sourceTree = "<group>";
+		};
 		3080C7E51E68EDF400F13DDE = {
 			isa = PBXGroup;
 			children = (
 				3080C7F01E68EDF400F13DDE /* 实验室农委项目 */,
 				3080C7EF1E68EDF400F13DDE /* Products */,
+				FEB94007BAD734B03EA3B198 /* Pods */,
+				2A617CF73CAD69B9E1C07423 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,14 +190,7 @@
 		3080C7F01E68EDF400F13DDE /* 实验室农委项目 */ = {
 			isa = PBXGroup;
 			children = (
-				3080C7F41E68EDF400F13DDE /* AppDelegate.h */,
-				3080C7F51E68EDF400F13DDE /* AppDelegate.m */,
-				3080C7F71E68EDF400F13DDE /* ViewController.h */,
-				3080C7F81E68EDF400F13DDE /* ViewController.m */,
-				3080C7FA1E68EDF400F13DDE /* Main.storyboard */,
-				3080C7FD1E68EDF400F13DDE /* Assets.xcassets */,
-				3080C7FF1E68EDF400F13DDE /* LaunchScreen.storyboard */,
-				3080C8021E68EDF400F13DDE /* Info.plist */,
+				3080C80C1E68F26F00F13DDE /* Classes */,
 				3080C7F11E68EDF400F13DDE /* Supporting Files */,
 			);
 			path = "实验室农委项目";
@@ -74,9 +199,94 @@
 		3080C7F11E68EDF400F13DDE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3080C7FD1E68EDF400F13DDE /* Assets.xcassets */,
+				3080C7FF1E68EDF400F13DDE /* LaunchScreen.storyboard */,
+				3080C8021E68EDF400F13DDE /* Info.plist */,
 				3080C7F21E68EDF400F13DDE /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3080C80C1E68F26F00F13DDE /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				30659F471E6FDBC5005C6BD1 /* Product Detail */,
+				3080C8221E69095D00F13DDE /* Tools */,
+				3080C8141E68F54800F13DDE /* Main */,
+				3080C80D1E68F26F00F13DDE /* Home */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		3080C80D1E68F26F00F13DDE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3040AE291E6D9636007E2447 /* Model */,
+				3040AE281E6D962F007E2447 /* Controller */,
+				3040AE211E6D9627007E2447 /* View */,
+				3080C80E1E68F26F00F13DDE /* QRCode */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		3080C80E1E68F26F00F13DDE /* QRCode */ = {
+			isa = PBXGroup;
+			children = (
+				3080C8121E68F2FC00F13DDE /* QRCode.storyboard */,
+				3080C81F1E68F90400F13DDE /* QRCodeViewController.h */,
+				3080C8201E68F90400F13DDE /* QRCodeViewController.m */,
+			);
+			path = QRCode;
+			sourceTree = "<group>";
+		};
+		3080C8141E68F54800F13DDE /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				3080C7F41E68EDF400F13DDE /* AppDelegate.h */,
+				3080C7F51E68EDF400F13DDE /* AppDelegate.m */,
+				3080C7F71E68EDF400F13DDE /* ViewController.h */,
+				3080C7F81E68EDF400F13DDE /* ViewController.m */,
+				3080C7FA1E68EDF400F13DDE /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		3080C8221E69095D00F13DDE /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				3080C8241E692A2D00F13DDE /* Category */,
+				3080C8231E69099D00F13DDE /* MyPch.pch */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		3080C8241E692A2D00F13DDE /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				3080C8251E692A2D00F13DDE /* UIImage+Fit.h */,
+				3080C8261E692A2D00F13DDE /* UIImage+Fit.m */,
+				3080C8271E692A2D00F13DDE /* UIView+AdjustFrame.h */,
+				3080C8281E692A2D00F13DDE /* UIView+AdjustFrame.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		30E967921E6E62ED0012C59F /* HYSearchBar */ = {
+			isa = PBXGroup;
+			children = (
+				30E967931E6E630D0012C59F /* HYSearchTextField.h */,
+				30E967941E6E630D0012C59F /* HYSearchTextField.m */,
+			);
+			path = HYSearchBar;
+			sourceTree = "<group>";
+		};
+		FEB94007BAD734B03EA3B198 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3A651F75B55B49973EBB93B2 /* Pods-实验室农委项目.debug.xcconfig */,
+				B37A4232A9E3F3D13FAF6C5C /* Pods-实验室农委项目.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,9 +296,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3080C8051E68EDF400F13DDE /* Build configuration list for PBXNativeTarget "实验室农委项目" */;
 			buildPhases = (
+				F8268992E313877D081F5686 /* [CP] Check Pods Manifest.lock */,
 				3080C7EA1E68EDF400F13DDE /* Sources */,
 				3080C7EB1E68EDF400F13DDE /* Frameworks */,
 				3080C7EC1E68EDF400F13DDE /* Resources */,
+				0CD8BB01CFD5921796C5AFC7 /* [CP] Embed Pods Frameworks */,
+				64C7A0B1C1B6F80498F5EDB6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -110,6 +323,8 @@
 				TargetAttributes = {
 					3080C7ED1E68EDF400F13DDE = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = Z8R496PFRK;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -138,21 +353,89 @@
 			buildActionMask = 2147483647;
 			files = (
 				3080C8011E68EDF400F13DDE /* LaunchScreen.storyboard in Resources */,
+				3040AE261E6D9627007E2447 /* Home.storyboard in Resources */,
 				3080C7FE1E68EDF400F13DDE /* Assets.xcassets in Resources */,
+				3080C8131E68F2FC00F13DDE /* QRCode.storyboard in Resources */,
+				30659F411E6F9F97005C6BD1 /* HYListCell.xib in Resources */,
+				30659F461E6FC2DF005C6BD1 /* listTable.plist in Resources */,
+				30E967BD1E6EC18B0012C59F /* Homelist.plist in Resources */,
+				30659F501E6FE288005C6BD1 /* HYDetailStoryboard.storyboard in Resources */,
 				3080C7FC1E68EDF400F13DDE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0CD8BB01CFD5921796C5AFC7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-实验室农委项目/Pods-实验室农委项目-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		64C7A0B1C1B6F80498F5EDB6 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-实验室农委项目/Pods-实验室农委项目-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F8268992E313877D081F5686 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3080C7EA1E68EDF400F13DDE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3040AE271E6D9627007E2447 /* HYPageView.m in Sources */,
+				30E967C21E6ED3280012C59F /* HYHomeHeaderView.m in Sources */,
+				30659F401E6F9F97005C6BD1 /* HYListCell.m in Sources */,
+				30659F4B1E6FE11A005C6BD1 /* HYDetailViewController.m in Sources */,
+				30E967951E6E630D0012C59F /* HYSearchTextField.m in Sources */,
+				30E967C51E6ED9270012C59F /* HYTypeModel.m in Sources */,
+				3080C8291E692A2D00F13DDE /* UIImage+Fit.m in Sources */,
+				30659F441E6FADB6005C6BD1 /* HYListModel.m in Sources */,
+				30E967CF1E6EEF3B0012C59F /* HYListViewController.m in Sources */,
 				3080C7F91E68EDF400F13DDE /* ViewController.m in Sources */,
 				3080C7F61E68EDF400F13DDE /* AppDelegate.m in Sources */,
+				30E967C81E6ED9450012C59F /* HYDetailModel.m in Sources */,
+				3080C8211E68F90400F13DDE /* QRCodeViewController.m in Sources */,
+				30E967CB1E6EDE730012C59F /* HYDetailCell.m in Sources */,
 				3080C7F31E68EDF400F13DDE /* main.m in Sources */,
+				3080C82A1E692A2D00F13DDE /* UIView+AdjustFrame.m in Sources */,
+				3040AE2C1E6D966F007E2447 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +448,7 @@
 				3080C7FB1E68EDF400F13DDE /* Base */,
 			);
 			name = Main.storyboard;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		3080C7FF1E68EDF400F13DDE /* LaunchScreen.storyboard */ = {
@@ -268,23 +552,36 @@
 		};
 		3080C8061E68EDF400F13DDE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A651F75B55B49973EBB93B2 /* Pods-实验室农委项目.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = Z8R496PFRK;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/实验室农委项目/Classes/Tools/MyPch.pch";
 				INFOPLIST_FILE = "实验室农委项目/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Shy.-------";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		3080C8071E68EDF400F13DDE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B37A4232A9E3F3D13FAF6C5C /* Pods-实验室农委项目.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = Z8R496PFRK;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/实验室农委项目/Classes/Tools/MyPch.pch";
 				INFOPLIST_FILE = "实验室农委项目/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Shy.-------";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -307,6 +604,7 @@
 				3080C8071E68EDF400F13DDE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

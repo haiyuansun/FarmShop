@@ -1,0 +1,30 @@
+//
+//  MyPch.pch
+//  实验室农委项目
+//
+//  Created by 孙海源 on 2017/3/3.
+//  Copyright © 2017年 孙海源. All rights reserved.
+//
+
+#ifndef MyPch_pch
+#define MyPch_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import "UIView+AdjustFrame.h"
+#define WIDTH [UIScreen mainScreen].bounds.size.width
+#define TOPPH 64
+#define ConsHeight 44
+#define MAS_SHORTHAND
+#define RandomColor      [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1.0f];
+#define tColor [UIColor colorWithRed:10.f/255.0 green:166.f/255.0 blue: 118/225.f alpha:1.0f]
+#ifdef DEBUG
+#define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+#else
+#define DLog(...)
+#endif
+
+#define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
+
+
+#endif /* MyPch_pch */
