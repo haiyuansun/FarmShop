@@ -10,9 +10,9 @@
 #import "HYPageView.h"
 
 @interface HYDetailViewController ()<UITableViewDelegate, UITableViewDataSource>
-@property (weak, nonatomic) IBOutlet HYPageView *pageView;
 @property (nonatomic, strong) NSArray *images;
 @property (nonatomic, strong) UISegmentedControl *segment;
+@property (weak, nonatomic) IBOutlet UIImageView *topImageView;
 @property (nonatomic, strong) UIView *recordView;
 @end
 
@@ -33,7 +33,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.pageView.imageArr = self.images;
+
+//    self.pageView.imageArr = self.images;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -41,7 +42,9 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.tableView.showsVerticalScrollIndicator = NO;
     [self initSegmentControll];
+    [self initTopView];
     self.recordView = self.view;
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,12 +52,18 @@
     // Dispose of any resources that can be recreated.
 }
 #pragma mark - init
+-(void)initTopView{
+    self.topImageView.image = [UIImage imageNamed:@"苹果"];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(topViewOnClick)];
+    [self.topImageView addGestureRecognizer:tap];
+}
+
 -(void)initSegmentControll{
     NSArray *segmentArr = [NSArray arrayWithObjects:@"商品", @"详情",@"评价",nil];
     UISegmentedControl *sc = [[UISegmentedControl alloc] initWithItems: segmentArr];
     sc.tintColor = tColor;
     [sc addTarget:self action:@selector(segmentChanged:) forControlEvents:UIControlEventValueChanged];
-    UIImage *image = [self getImageWithColor:[UIColor whiteColor] height:sc.height];
+//    UIImage *image = [self getImageWithColor:[UIColor whiteColor] height:sc.height];
     sc.selectedSegmentIndex = 0;
     //        [sc setBackgroundImage:image forState:UIControlStateNormal | UIControlStateSelected barMetrics: UIBarMetricsDefault];
     sc.backgroundColor = [UIColor whiteColor];
@@ -81,6 +90,11 @@
 //    return nil;
 //}
 #pragma mark - internal methods
+-(void)topViewOnClick{
+    DLog(@"....");
+}
+
+
 -(void)segmentChanged: (UISegmentedControl *)segment{
     DLog(@"%ld", (long)segment.selectedSegmentIndex);
 //    UIView *currentView = self.view;

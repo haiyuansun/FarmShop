@@ -154,8 +154,8 @@
 /*collectionView*/
 -(void)createBotCollectionView{
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-    CGFloat y = bannerHeight + ConsHeight + 64;
-    CGFloat height = [UIScreen mainScreen].bounds.size.height - y;
+//    CGFloat y = bannerHeight + ConsHeight + 64;
+//    CGFloat height = [UIScreen mainScreen].bounds.size.height - y;
 //    UICollectionView *cv = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0 , WID0H, height - 44) collectionViewLayout:flowLayout];
     UICollectionView *cv = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
     cv.backgroundColor = [UIColor clearColor];
