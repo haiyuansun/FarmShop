@@ -9,32 +9,48 @@
 #import "HomeViewController.h"
 #import "HYPageView.h"
 #import "HYHomeHeaderView.h"
+#import "QRCodeViewController.h"
 #import "HYDetailCell.h"
 #import "HYTypeModel.h"
 #import "HYDetailModel.h"
 #import "HYListViewController.h"
 #import <Masonry/Masonry.h>
+#import "UIImage+Fit.h"
+#import "PYSearch.h"
+#import "HYGoods.h"
+#import <MJRefresh/MJRefresh.h>
+#import "HYGoodsViewModel.h"
 
-
-
-#define TopCount 6
-#define bannerHeight 240
+#define TopCount 3
+//#define bannerHeight 240
 #define botCellIdentifier @"botCell"
 #define botHeaderIdentifier @"botHeader"
+#define collectionViewMargin 20
 
 
-@interface HomeViewController ()<HYPageViewDelegate, UISearchBarDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
+
+@interface HomeViewController ()<HYPageViewDelegate, UICollectionViewDelegate, UICollectionViewDataSource, PYSearchViewControllerDelegate>
 @property (nonatomic, strong) HYPageView *topBanner;
 @property (nonatomic, strong) NSArray *topImages;
-@property (nonatomic, strong) UISearchBar *middleBar;
+//@property (nonatomic, strong) UISearchBar *middleBar;
 @property (nonatomic, strong) UICollectionView *botCollectionView;
 @property (nonatomic, strong) NSArray *typeArray;
+@property (nonatomic, strong) HYSuperMarketData *SMData;
+@property (nonatomic, assign) CGFloat bannerHeight;
 
 @end
+
 
 @implementation HomeViewController
 
 #pragma mark - 懒加载
+
+-(HYSuperMarketData *)SMData{
+    if (!_SMData) {
+        _SMData = [[HYGoodsViewModel sharedGoodsViewModel] loadGoods];
+    }
+    return _SMData;
+}
 
 -(NSArray *)typeArray{
     if (!_typeArray) {
@@ -55,7 +71,7 @@
     if (!_topImages) {
         NSMutableArray *array = [NSMutableArray array];
         for (int i = 0; i < TopCount; i++) {
-            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"%d",i+1]];
+            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"rec%d",i+1]];
             [array addObject:image];
         }
         _topImages = [array copy];
@@ -66,7 +82,10 @@
 -(HYPageView *)topBanner{
     if (!_topBanner) {
 //        _topBanner = [[HYPageView alloc] initPageViewWithFrame: CGRectMake(0, 64, WIDTH, bannerHeight) Views:self.topImages];
-        _topBanner = [[HYPageView alloc] initWithFrame: CGRectMake(0, 64, WIDTH, bannerHeight)];
+        UIImage *image = self.topImages[0];
+        CGFloat scale = image.size.height / image.size.width;
+         _bannerHeight = screenWidth * scale;
+        _topBanner = [[HYPageView alloc] initWithFrame: CGRectMake(0, -_bannerHeight, screenWidth, _bannerHeight)];
         _topBanner.imageArr = self.topImages;
         _topBanner.delegate = self;
     }
@@ -76,123 +95,85 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self.view addSubview:self.topBanner];
     self.automaticallyAdjustsScrollViewInsets = NO;//必须要加上这句，否则scrollview会自带inset
-    [self createSearchBar];
+    [self createSearchBtn];
     self.navigationController.navigationBar.tintColor = tColor;
     [self createBotCollectionView];
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
-    tap.cancelsTouchesInView = NO;
-    UIView *cover = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    [cover setBackgroundColor:[UIColor whiteColor]];
-    [cover setAlpha:0.02];
-    self.middleBar.inputAccessoryView = cover;
-    [cover addGestureRecognizer:tap];
-//    [self.topBanner addGestureRecognizer:tap];
-//    [self.botCollectionView addGestureRecognizer:tap];
+    [self createScanBtn];
+//    self.navigationController.navigationBar.translucent = YES;
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
 #pragma mark - createItems
 
-/*searchbar*/
--(void)createSearchBar{
 
-    UIView *superview = self.view;
-    UISearchBar *searchBar = [[UISearchBar alloc] init];
-    self.middleBar = searchBar;
-//    searchBar.frame = CGRectMake(0, TOPPH + self.topBanner.height, WIDTH, ConsHeight);
-    [self.view addSubview:searchBar];
-    [searchBar mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(superview.mas_left);
-        make.right.mas_equalTo(superview.mas_right);
-        make.top.mas_equalTo(self.topBanner.mas_bottom);
-        make.height.mas_equalTo(ConsHeight);
-    }];
-    searchBar.barStyle = UISearchBarStyleDefault;
-    searchBar.placeholder = @"请输入需要的农产品...";
-//    searchBar.barTintColor = [UIColor colorWithRed:235.f/255 green:235.f/255 blue:241.f/255 alpha:1.0];
-    searchBar.delegate = self;
-    searchBar.keyboardType = UIKeyboardTypeDefault;
-//    searchBar.showsCancelButton = YES;
-    //获取cancel button
-//    UIButton *cancelBtn = [searchBar valueForKey:@"_cancelButton"];
-//    [cancelBtn setTitle:@"搜索" forState:normal];
-//    [cancelBtn setTitleColor:tColor forState:UIControlStateNormal];
-//    cancelBtn.titleLabel.font = [UIFont systemFontOfSize:12.f];
-    [searchBar setBackgroundImage:[UIImage new]];
-    [searchBar setContentMode:UIViewContentModeLeft];
-    
-    UIView *bottomLine = [[UIView alloc] init];
-    bottomLine.backgroundColor = tColor;
-//    bottomLine.frame = CGRectMake(0, ConsHeight - 2, WIDTH, 2);
-    UIView *topLine = [[UIView alloc] init];
-    topLine.backgroundColor = tColor;
-    [searchBar addSubview:bottomLine];
-    [searchBar addSubview:topLine];
-    [topLine mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(WIDTH);
-        make.height.mas_equalTo(2);
-        make.left.mas_equalTo(superview.mas_left);
-        make.right.mas_equalTo(superview.mas_right);
-        make.top.mas_equalTo(searchBar.mas_top);
-    }];
-    [bottomLine mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(WIDTH);
-        make.height.mas_equalTo(2);
-        make.left.mas_equalTo(superview.mas_left);
-        make.right.mas_equalTo(superview.mas_right);
-        make.bottom.mas_equalTo(searchBar.mas_bottom);
-    }];
-    
-    
-
+//ScanButton
+-(void)createScanBtn{
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon_black_scancode"] style:UIBarButtonItemStylePlain target:self action:@selector(scanBtnClick)];
+    self.navigationItem.rightBarButtonItem = item;
 }
+
+/*searchBtn*/
+-(void)createSearchBtn{
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon_search"] style:UIBarButtonItemStylePlain target:self action:@selector(searchBtnClick)];
+    self.navigationItem.leftBarButtonItem = item;
+}
+
 /*collectionView*/
 -(void)createBotCollectionView{
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-//    CGFloat y = bannerHeight + ConsHeight + 64;
-//    CGFloat height = [UIScreen mainScreen].bounds.size.height - y;
-//    UICollectionView *cv = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0 , WID0H, height - 44) collectionViewLayout:flowLayout];
     UICollectionView *cv = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
-    cv.backgroundColor = [UIColor clearColor];
+//    cv.backgroundColor = [UIColor clearColor];
+    cv.backgroundColor = [UIColor colorWithRed:239/255.0 green:239/255.0 blue:239/255.0 alpha:1.0f];
     [self.view addSubview:cv];
-    UIView *superview = self.view;
+    [cv addSubview: self.topBanner];
+
+    cv.contentInset = UIEdgeInsetsMake(_bannerHeight, 0, tabbarHeight, 0);
     [cv mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.width.mas_equalTo(WIDTH);
-        make.top.mas_equalTo(self.middleBar.mas_bottom);
-        make.bottom.mas_equalTo(superview.mas_bottom).offset(-44);
-        make.left.mas_equalTo(superview.mas_left);
-        make.right.mas_equalTo(superview.mas_right);
+        make.edges.equalTo(self.view);
     }];
     [cv registerClass:[HYDetailCell class] forCellWithReuseIdentifier:botCellIdentifier];
     [cv registerClass:[HYHomeHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:botHeaderIdentifier];
     cv.dataSource = self;
     cv.delegate = self;
+    self.botCollectionView = cv;
+    __weak __typeof(self) weakSelf = self;
     
+    _botCollectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            [weakSelf.b reloadData];
+            //刷新数据
+            [self reloadData];
+            // 结束刷新
+            [weakSelf.botCollectionView.mj_header endRefreshing];
+
+        });
+        
+    }];
+    [_botCollectionView.mj_header beginRefreshing];
     // 布局 layout
-    flowLayout.itemSize = CGSizeMake(100, 100);
-    flowLayout.minimumLineSpacing = 30;
-    flowLayout.minimumInteritemSpacing = 10;
+
+    
+    flowLayout.itemSize = [self getItemSize];
+    flowLayout.minimumLineSpacing = collectionViewMargin;
+    flowLayout.minimumInteritemSpacing = collectionViewMargin;
 //    flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     flowLayout.scrollDirection =  UICollectionViewScrollDirectionVertical;
-    flowLayout.sectionInset = UIEdgeInsetsMake(20, 20, 20, 20);
+    flowLayout.sectionInset = UIEdgeInsetsMake(20, 20, 20, 10);
     
-    flowLayout.headerReferenceSize  = CGSizeMake(WIDTH, 40);
+    flowLayout.headerReferenceSize  = CGSizeMake(screenWidth, 30);
     
 }
 #pragma mark - UICollectionViewDelegate
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    HYTypeModel *type = self.typeArray[indexPath.section];
-    HYDetailModel *model = type.detailList[indexPath.item];
-    
-    DLog(@"%@, %@", model.name, type.title);
+
     HYListViewController *listVc = [[HYListViewController alloc] init];
-    listVc.searchStr = model.name;
-    [self.navigationController pushViewController:listVc animated:NO];
+//    listVc.searchStr = model.name;
+    ProductCategory *category = [self.SMData.categories objectAtIndex:indexPath.section];
+    ProductChildCategory *childCategory = [category.childCategories objectAtIndex:indexPath.item];
+    listVc.products = childCategory.products;
+    [self.navigationController pushViewController:listVc animated:YES];
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -200,28 +181,36 @@
 -(UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
     HYHomeHeaderView *reusableView = nil;
     if (kind == UICollectionElementKindSectionHeader) {
-        HYHomeHeaderView *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:botHeaderIdentifier forIndexPath:indexPath];
-        reusableView = header;
+//        if (indexPath.section == 0) {
+//            HYHomeHeaderView *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"banner" forIndexPath:indexPath];
+//            reusableView = header;
+//        }else{
+            HYHomeHeaderView *header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:botHeaderIdentifier forIndexPath:indexPath];
+            reusableView = header;
+            reusableView.model = self.SMData.categories[indexPath.section];
         
-        reusableView.model = self.typeArray[indexPath.section];
     }
 //    reusableView.backgroundColor = [UIColor clearColor];
     return reusableView;
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return self.typeArray.count;
+    return self.SMData.categories.count;
 }
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return [self.typeArray[section] detailList].count;
+    ProductCategory *category = self.SMData.categories[section];
+    return category.childCategories.count;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     HYDetailCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:botCellIdentifier forIndexPath:indexPath];
-    HYTypeModel *m = self.typeArray[indexPath.section];
-    cell.model = m.detailList[indexPath.item];
+//    HYTypeModel *m = self.typeArray[indexPath.section];
+    ProductCategory *category = self.SMData.categories[indexPath.section];
+    cell.model = category.childCategories[indexPath.row];
     return cell;
 }
+#pragma mark - UIScrollViewDelegate
+
 
 
 
@@ -230,28 +219,71 @@
     DLog(@"%lu", (unsigned long)index);
 }
 
-#pragma mark - UISearchBarDelegate
--(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
-    DLog(@"%@", searchBar.text);
-    [self.middleBar resignFirstResponder];
-    HYListViewController *listVc = [[HYListViewController alloc] init];
-    listVc.searchStr = searchBar.text;
-    [self.navigationController pushViewController:listVc animated:NO];
+#pragma mark - PYSearchViewControllerDelegate
 
+- (void)searchViewController:(PYSearchViewController *)searchViewController searchTextDidChange:(UISearchBar *)seachBar searchText:(NSString *)searchText
+{
+    if (searchText.length) { // 与搜索条件再搜索
+        // 根据条件发送查询（这里模拟搜索）
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{ // 搜索完毕
+            // 显示建议搜索结果
+            NSMutableArray *searchSuggestionsM = [NSMutableArray array];
+            for (int i = 0; i < arc4random_uniform(5) + 10; i++) {
+                NSString *searchSuggestion = [NSString stringWithFormat:@"搜索建议 %d", i];
+                [searchSuggestionsM addObject:searchSuggestion];
+            }
+            // 返回
+            searchViewController.searchSuggestions = searchSuggestionsM;
+        });
+    }
 }
--(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
-    [searchBar endEditing:YES];
-    DLog(@"%@", searchBar.text);
-    searchBar.text = @"";
-    [self.middleBar resignFirstResponder];
-    HYListViewController *listVc = [[HYListViewController alloc] init];
-    listVc.searchStr = searchBar.text;
-    [self.navigationController pushViewController:listVc animated:NO];
 
-}
+
 #pragma mark - 内部控制方法
--(void)dismissKeyboard{
-    [self.middleBar resignFirstResponder];
+//加载数据
+-(void)reloadData{
+    [self.botCollectionView reloadData];
+}
+
+//-(void)loadData{
+//    self.SMData = [[HYGoodsViewModel sharedGoodsViewModel] loadGoods];
+//}
+
+-(void)scanBtnClick{
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"QRCode" bundle:nil];
+    QRCodeViewController *vc = [sb instantiateInitialViewController];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+-(void)searchBtnClick{
+    NSArray *hotSeaches = @[@"苹果", @"毛冬瓜", @"进口蓝莓", @"香蕉", @"北京白菜", @"秋葵", @"枇杷", @"西兰花", @"鸡腿", @"澳洲进口雪花牛腩块", @"川香鸡柳", @"优质肘子", @"黑美人西瓜", @"经典鸡块"];
+    // 2. Create searchViewController
+    PYSearchViewController *searchViewController = [PYSearchViewController searchViewControllerWithHotSearches:hotSeaches searchBarPlaceholder:@"请输入搜索商品" didSearchBlock:^(PYSearchViewController *searchViewController, UISearchBar *searchBar, NSString *searchText) {
+        // Call this Block when completion search automatically
+        // Such as: Push to a view controller
+        HYListViewController *listVc = [[HYListViewController alloc] init];
+//        listVc.searchStr = searchBar.text;
+        [searchViewController.navigationController pushViewController:listVc animated:YES];
+    }];
+    //2.5 setup
+    //    searchViewController.navigationController.navigationBar.tintColor = tColor;
+    searchViewController.hotSearchStyle = PYHotSearchStyleRankTag;
+    searchViewController.delegate = self;
+    // 3. present the searchViewController
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:searchViewController];
+    nav.navigationBar.tintColor = tColor;
+    [self presentViewController:nav  animated:YES completion:nil];
+
+}
+-(CGSize)getItemSize{
+    NSString *imgName = [[[[self.SMData.categories firstObject] childCategories] firstObject] img];
+    UIImage *img = [UIImage imageNamed:imgName];
+    CGFloat imageW = img.size.width;
+    CGFloat imageH = img.size.height;
+    CGFloat scale = imageH / imageW;
+    CGFloat width = (screenWidth - collectionViewMargin * 3) * 0.5;
+    CGFloat height = width * scale;
+    return CGSizeMake(width, height);
+    
 }
 
 -(UIImage *)getImageWithColor: (UIColor *)color height:(CGFloat)height{

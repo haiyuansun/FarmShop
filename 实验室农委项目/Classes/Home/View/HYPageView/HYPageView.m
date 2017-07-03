@@ -70,6 +70,8 @@ static const NSString *identifier = @"pool";
     self.page = [[UIPageControl alloc] initWithFrame:CGRectMake(0, self.frame.size.height - height, self.frame.size.width, height)];
     [self addSubview:self.page];
     self.page.numberOfPages = self.imageArr.count;
+    //禁用pagecontrol交互
+    self.page.userInteractionEnabled = NO;
 }
 
 -(void)initCollectionView{

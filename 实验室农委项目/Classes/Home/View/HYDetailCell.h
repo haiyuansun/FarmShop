@@ -7,9 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HYDetailModel.h"
+#import "HYGoods.h"
 
 @interface HYDetailCell : UICollectionViewCell
-@property (nonatomic, strong) HYDetailModel *model;
+@property (nonatomic, strong) ProductChildCategory *model;
 
 @end

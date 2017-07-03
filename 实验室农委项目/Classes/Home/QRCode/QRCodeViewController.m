@@ -81,17 +81,18 @@
 }
 
 #pragma mark - 内部方法
-- (IBAction)closeBtnClick:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-- (IBAction)PhotoBtnClick:(id)sender {
-//    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary])
-//        return;
-    UIImagePickerController *imagePickerVc = [[UIImagePickerController alloc] init];
-    imagePickerVc.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    imagePickerVc.delegate = self;
-    [self presentViewController:imagePickerVc animated:YES completion:nil];
-}
+//- (IBAction)closeBtnClick:(id)sender {
+//    DLog(@"closeBtnClick");
+//    [self dismissViewControllerAnimated:YES completion:nil];
+//}
+//- (IBAction)PhotoBtnClick:(id)sender {
+////    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary])
+////        return;
+//    UIImagePickerController *imagePickerVc = [[UIImagePickerController alloc] init];
+//    imagePickerVc.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+//    imagePickerVc.delegate = self;
+//    [self presentViewController:imagePickerVc animated:YES completion:nil];
+//}
 
 -(void)scanQRCode{
     if (![self.session canAddInput:self.input]) {

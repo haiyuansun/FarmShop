@@ -1,0 +1,6 @@
+framework module Pods________ {
+  umbrella header "Pods-实验室农委项目-umbrella.h"
+
+  export *
+  module * { export * }
+}

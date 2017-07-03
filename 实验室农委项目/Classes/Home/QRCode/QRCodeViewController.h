@@ -6,9 +6,9 @@
 //  Copyright © 2017年 孙海源. All rights reserved.
 //
 
-#import "ViewController.h"
+//#import "ViewController.h"
 #import <AVFoundation/AVFoundation.h>
 
-@interface QRCodeViewController : ViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate, AVCaptureMetadataOutputObjectsDelegate>
+@interface QRCodeViewController : UIViewController<UIImagePickerControllerDelegate, UINavigationControllerDelegate, AVCaptureMetadataOutputObjectsDelegate>
 
 @end

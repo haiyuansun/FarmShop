@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "HYMainTabBarController.h"
+#import "HYVisitorViewController.h"
+#import "HYBaseNavController.h"
+#import "AccountViewModel.h"
 
 @interface AppDelegate ()
 
@@ -17,9 +21,64 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeRootViewController:) name:HYRootViewControllerChangeName object:nil];
+    [self setAppStyle];
+    [self buildKeyWindow];
     return YES;
 }
 
+- (void)buildKeyWindow{
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    [self.window makeKeyAndVisible];
+//    NSString *isFirestOpenApp = [[NSUserDefaults standardUserDefaults]objectForKey:IsFirstOpenApp];
+//    if (isFirestOpenApp == nil) {
+//#warning mark - 这里正常是跳入到版本新特新界面
+//        [self showMainTabBarController];
+//        [[NSUserDefaults standardUserDefaults]setObject:IsFirstOpenApp forKey:IsFirstOpenApp];
+//    }else
+//    {
+//        [self showMainTabBarController];
+//    }
+//    [self showMainTabBarController];
+    AccountViewModel *account = [[AccountViewModel alloc] init];
+    if (account.isUserLogin) {
+        [self showMainTabBarController];
+    }else{
+        [self showVisitorController];
+    }
+}
+
+- (void)setAppStyle{
+    UITabBar *item = [UITabBar appearance];
+    item.tintColor = tColor;
+    UINavigationBar *navigationBar = [UINavigationBar appearance];
+    // 禁止透明度
+    navigationBar.translucent = NO;
+}
+-(void)showVisitorController{
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
+    HYVisitorViewController *vc = [sb instantiateInitialViewController];
+    HYBaseNavController *nav = [[HYBaseNavController alloc] initWithRootViewController:vc];
+    nav.navigationBar.tintColor = tColor;
+    self.window.rootViewController = nav;
+
+}
+
+- (void)showMainTabBarController
+{
+    self.window.rootViewController = [[HYMainTabBarController alloc]init];
+    
+}
+
+-(void)changeRootViewController:(NSNotification *)notification{
+    NSDictionary *dict = notification.object;
+    NSString *value = dict[@"isVisitor"];
+    if ([value isEqualToString:@"YES"]) {
+        [self showVisitorController];
+    }else{
+        [self showMainTabBarController];
+    }
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

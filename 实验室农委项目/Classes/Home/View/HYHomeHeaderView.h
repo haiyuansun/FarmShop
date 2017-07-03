@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "HYTypeModel.h"
+#import "HYGoods.h"
 
 @interface HYHomeHeaderView : UICollectionReusableView
 //@property (nonatomic, copy) NSString *textString;
-@property (nonatomic, strong) HYTypeModel *model;
+@property (nonatomic, strong) ProductCategory *model;
 @end

@@ -16,7 +16,7 @@
 
 -(instancetype)initWithFrame:(CGRect)frame{
     if ((self = [super initWithFrame:frame])) {
-        UILabel *lb = [[UILabel alloc] initWithFrame:CGRectMake(20, 10, WIDTH, 20)];
+        UILabel *lb = [[UILabel alloc] initWithFrame:CGRectMake(20, 10, screenWidth, 20)];
         self.textLabel = lb;
         [self addSubview:lb];
 //        self.frame = CGRectMake(0, 0, WIDTH, 25);
@@ -25,9 +25,9 @@
     }
     return self;
 }
--(void)setModel:(HYTypeModel *)model{
+-(void)setModel:(ProductCategory *)model{
     _model = model;
-    self.textLabel.text = model.title;
+    self.textLabel.text = model.name;
 }
 
 @end

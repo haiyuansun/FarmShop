@@ -12,7 +12,7 @@
         <!--首页-->
         <scene sceneID="3BF-wd-heG">
             <objects>
-                <navigationController id="enC-HT-tEy" sceneMemberID="viewController">
+                <navigationController hidesBottomBarWhenPushed="YES" id="enC-HT-tEy" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="首页" id="VP4-ld-2u6"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ouc-Hj-WaQ">

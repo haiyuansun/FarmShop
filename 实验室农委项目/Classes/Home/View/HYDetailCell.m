@@ -8,34 +8,34 @@
 
 #import "HYDetailCell.h"
 #import <Masonry/Masonry.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface HYDetailCell()
-@property (nonatomic, strong) UILabel *textLabel;
-
+@property (nonatomic, strong) UIImageView *iconView;
 @end
 
 @implementation HYDetailCell
 
 -(instancetype)initWithFrame:(CGRect)frame{
     if ((self = [super initWithFrame:frame])) {
-        UILabel *lb = [[UILabel alloc] init];
         UIView *superview = self.contentView;
-        self.textLabel = lb;
-        [self.contentView addSubview: lb];
-        self.backgroundColor = RandomColor;
-        [lb mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.mas_equalTo(superview.mas_left);
-            make.right.mas_equalTo(superview.mas_right);
-            make.centerX.mas_equalTo(superview.mas_centerX);
-            make.height.mas_equalTo(@20);
+        _iconView = [[UIImageView alloc] init];
+        [self.contentView addSubview:_iconView];
+        [_iconView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.mas_equalTo(superview);
         }];
-        lb.textAlignment = NSTextAlignmentCenter;
+        
     }
     return self;
 }
--(void)setModel:(HYDetailModel *)model{
+-(void)setModel:(ProductChildCategory *)model{
     _model = model;
-    self.textLabel.text = model.name;
+//    self.textLabel.text = model.name;
+//    self.nameLabel.text = model.name;
+    self.iconView.image = [UIImage imageNamed: model.img];
+    self.iconView.layer.cornerRadius = 10.f;
+    self.iconView.layer.masksToBounds = YES;
+    
 }
 
 @end

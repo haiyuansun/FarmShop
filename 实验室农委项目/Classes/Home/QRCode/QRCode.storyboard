@@ -1,34 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mjE-wK-ULt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mEg-2U-Xkl">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="waF-sx-i91">
-            <objects>
-                <navigationController id="mjE-wK-ULt" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WUa-ac-JYd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="mEg-2U-Xkl" kind="relationship" relationship="rootViewController" id="PZE-EX-MQQ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lAy-p2-j8i" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-298" y="410"/>
-        </scene>
         <!--扫一扫-->
         <scene sceneID="aY6-An-kXX">
             <objects>
@@ -96,18 +76,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="扫一扫" id="rsk-UB-TCR">
-                        <barButtonItem key="leftBarButtonItem" title="关闭" id="RXI-GZ-9Em">
-                            <connections>
-                                <action selector="closeBtnClick:" destination="mEg-2U-Xkl" id="JiG-dr-6BX"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="相册" id="jxY-hO-YHJ">
-                            <connections>
-                                <action selector="PhotoBtnClick:" destination="mEg-2U-Xkl" id="rxK-F9-Ehp"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="扫一扫" id="rsk-UB-TCR"/>
                     <connections>
                         <outlet property="containerHeightCons" destination="zdI-pr-Yqf" id="6eX-vT-Nev"/>
                         <outlet property="customContainerView" destination="MxC-FI-rFf" id="FoH-nu-R6z"/>
@@ -117,51 +86,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J4s-tt-sSB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="437" y="410"/>
-        </scene>
-        <!--CreateQR Code View Controller-->
-        <scene sceneID="f1v-YT-ppb">
-            <objects>
-                <viewController id="21S-II-Ks6" customClass="CreateQRCodeViewController" customModule="实验室农委项目" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="h9F-c2-ll7"/>
-                        <viewControllerLayoutGuide type="bottom" id="QKw-IJ-fUi"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="q0c-Qc-wGG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PY6-EN-1ho">
-                                <rect key="frame" x="37.5" y="183.5" width="300" height="300"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="3Dr-Ld-Q51"/>
-                                    <constraint firstAttribute="width" constant="300" id="77h-oa-4zW"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="VTs-bP-ccN"/>
-                                    <constraint firstAttribute="height" constant="300" id="nC5-la-oa4"/>
-                                    <constraint firstAttribute="width" id="yW1-oD-Ppy"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="3Dr-Ld-Q51"/>
-                                        <exclude reference="VTs-bP-ccN"/>
-                                        <exclude reference="yW1-oD-Ppy"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="PY6-EN-1ho" firstAttribute="centerX" secondItem="q0c-Qc-wGG" secondAttribute="centerX" id="I2X-Ol-VhV"/>
-                            <constraint firstItem="PY6-EN-1ho" firstAttribute="centerY" secondItem="q0c-Qc-wGG" secondAttribute="centerY" id="n5u-dy-01I"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="customView" destination="PY6-EN-1ho" id="eoF-an-r6U"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MGG-GY-2jZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1160" y="410"/>
+            <point key="canvasLocation" x="1375.2" y="409.7451274362819"/>
         </scene>
     </scenes>
     <resources>

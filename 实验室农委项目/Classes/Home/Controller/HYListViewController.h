@@ -10,6 +10,5 @@
 #import "HYListCell.h"
 
 @interface HYListViewController : UITableViewController
-@property (nonatomic, copy) NSString *searchStr;
-
+@property (nonatomic, strong) NSArray *products;
 @end

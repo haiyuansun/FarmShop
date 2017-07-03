@@ -14,5 +14,5 @@
  *  传入图片名称,返回拉伸好的图片
  */
 + (UIImage *)resizeImage:(NSString *)imageName;
-
++ (UIImage *)scaleToSize:(UIImage *)img size:(CGSize)newsize;
 @end

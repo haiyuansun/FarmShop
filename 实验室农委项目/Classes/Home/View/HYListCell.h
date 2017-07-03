@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-@class HYListModel;
+@class HYGoods;
 
 @interface HYListCell : UITableViewCell
-@property (nonatomic, strong) HYListModel *listModel;
+@property (nonatomic, strong) HYGoods *goodModel;
 @end
