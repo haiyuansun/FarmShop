@@ -19,7 +19,7 @@ PODS:
   - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
   - Protobuf (3.3.0)
-  - PYSearch (0.8.0)
+  - PYSearch (0.8.2)
   - SDWebImage (4.0.0):
     - SDWebImage/Core (= 4.0.0)
   - SDWebImage/Core (4.0.0)
@@ -43,10 +43,10 @@ SPEC CHECKSUMS:
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   Protobuf: d582fecf68201eac3d79ed61369ef45734394b9c
-  PYSearch: 53c239376b392fe0658c2bd002f408e7caf63046
+  PYSearch: 6abe3721eb6a2f2a77f06a095b734cdb8faf3c81
   SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
 
 PODFILE CHECKSUM: ee665e4897d510887faa82686e4a47812320ee2b
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.1
