@@ -8,6 +8,8 @@
 
 #import "HYVisitorViewController.h"
 #import "OAuthViewController.h"
+#import "HYLoginViewController.h"
+#import "HYBaseNavController.h"
 
 @interface HYVisitorViewController ()
 
@@ -21,7 +23,8 @@
     // Do any additional setup after loading the view.
 
 }
--(void)viewWillAppear:(BOOL)animated{
+-(void)viewWillAppear:(BOOL)animated
+{
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = YES;
 }
@@ -30,12 +33,23 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)loginBtnClick:(id)sender {
+- (IBAction)loginBtnClick:(id)sender
+{
     OAuthViewController *vc = [[OAuthViewController alloc] init];
 
     [self.navigationController pushViewController:vc animated:YES];
 //    DLog(@"...");
 }
+- (IBAction)registerBtnClick:(id)sender
+{
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Login" bundle:[NSBundle mainBundle]];
+    
+    HYLoginViewController *vc = [sb instantiateViewControllerWithIdentifier:@"register"];
+    
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+
 
 /*
 #pragma mark - Navigation

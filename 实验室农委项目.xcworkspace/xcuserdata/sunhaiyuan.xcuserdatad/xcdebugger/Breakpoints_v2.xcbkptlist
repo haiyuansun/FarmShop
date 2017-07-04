@@ -153,22 +153,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "&#x5b9e;&#x9a8c;&#x5ba4;&#x519c;&#x59d4;&#x9879;&#x76ee;/Classes/Profile/Login/HYVisitorViewController.m"
-            timestampString = "512040935.854955"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "-loginBtnClick:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "&#x5b9e;&#x9a8c;&#x5ba4;&#x519c;&#x59d4;&#x9879;&#x76ee;/Classes/Profile/OAuth/OAuthViewController.m"
             timestampString = "512282107.087326"
             startingColumnNumber = "9223372036854775807"

@@ -61,7 +61,6 @@
     HYBaseNavController *nav = [[HYBaseNavController alloc] initWithRootViewController:vc];
     nav.navigationBar.tintColor = tColor;
     self.window.rootViewController = nav;
-
 }
 
 - (void)showMainTabBarController

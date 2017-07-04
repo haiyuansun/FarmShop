@@ -106,6 +106,7 @@
 		30B0958F1E718DA100154136 /* StarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B0958B1E718DA100154136 /* StarView.m */; };
 		30B1DB1D1E83A90400715016 /* HYProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30B1DB1C1E83A90400715016 /* HYProfileView.m */; };
 		30BE9D941E75178700C9E725 /* UIColor+HTColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 30BE9D931E75178700C9E725 /* UIColor+HTColor.m */; };
+		30E368C51F0BBE400024F1FB /* ShopModel.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E368C41F0BBE400024F1FB /* ShopModel.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		30E967951E6E630D0012C59F /* HYSearchTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E967941E6E630D0012C59F /* HYSearchTextField.m */; };
 		30E967BD1E6EC18B0012C59F /* Homelist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 30E967BC1E6EC18B0012C59F /* Homelist.plist */; };
 		30E967C21E6ED3280012C59F /* HYHomeHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E967C11E6ED3280012C59F /* HYHomeHeaderView.m */; };
@@ -299,6 +300,8 @@
 		30B1DB1C1E83A90400715016 /* HYProfileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYProfileView.m; sourceTree = "<group>"; };
 		30BE9D921E75178700C9E725 /* UIColor+HTColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HTColor.h"; sourceTree = "<group>"; };
 		30BE9D931E75178700C9E725 /* UIColor+HTColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HTColor.m"; sourceTree = "<group>"; };
+		30E368C31F0BBE400024F1FB /* ShopModel.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopModel.pbobjc.h; sourceTree = "<group>"; };
+		30E368C41F0BBE400024F1FB /* ShopModel.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopModel.pbobjc.m; sourceTree = "<group>"; };
 		30E967931E6E630D0012C59F /* HYSearchTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYSearchTextField.h; sourceTree = "<group>"; };
 		30E967941E6E630D0012C59F /* HYSearchTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYSearchTextField.m; sourceTree = "<group>"; };
 		30E967BC1E6EC18B0012C59F /* Homelist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Homelist.plist; sourceTree = "<group>"; };
@@ -313,7 +316,7 @@
 		30E967CC1E6EEF3B0012C59F /* HYListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYListViewController.h; sourceTree = "<group>"; };
 		30E967CD1E6EEF3B0012C59F /* HYListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYListViewController.m; sourceTree = "<group>"; };
 		3A651F75B55B49973EBB93B2 /* Pods-实验室农委项目.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-实验室农委项目.debug.xcconfig"; path = "Pods/Target Support Files/Pods-实验室农委项目/Pods-实验室农委项目.debug.xcconfig"; sourceTree = "<group>"; };
-		5F7FA6205300D7C33FA79C9B /* Pods________.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods________.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F7FA6205300D7C33FA79C9B /* Pods________.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods________.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B37A4232A9E3F3D13FAF6C5C /* Pods-实验室农委项目.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-实验室农委项目.release.xcconfig"; path = "Pods/Target Support Files/Pods-实验室农委项目/Pods-实验室农委项目.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -393,6 +396,8 @@
 		3040AE291E6D9636007E2447 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				30E368C31F0BBE400024F1FB /* ShopModel.pbobjc.h */,
+				30E368C41F0BBE400024F1FB /* ShopModel.pbobjc.m */,
 				3008A3571E792F110086FACF /* myGoods */,
 				303976201E76E2C40040A68F /* supermarket */,
 				30E967BC1E6EC18B0012C59F /* Homelist.plist */,
@@ -1111,6 +1116,7 @@
 				30E967CF1E6EEF3B0012C59F /* HYListViewController.m in Sources */,
 				306F9FBE1E7694C90082C884 /* ProfileViewController.m in Sources */,
 				300AE3581E7AD74B0032BA48 /* AnimatorPresentZoomTransition.m in Sources */,
+				30E368C51F0BBE400024F1FB /* ShopModel.pbobjc.m in Sources */,
 				30B0957D1E70FF2000154136 /* HYBrowserViewLayout.m in Sources */,
 				3093D0EC1E7BC29A00DA1D2B /* HYBuyView.m in Sources */,
 				306F9FC41E7697650082C884 /* HYBaseTabBarButton.m in Sources */,
